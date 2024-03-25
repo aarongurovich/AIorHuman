@@ -147,6 +147,20 @@ img {
     max-height: 300px; /* Adjust the maximum height as needed */
 }
 
+video{
+    width: 500px;
+    display: block;
+    margin: 20px auto; /* Center the images horizontally */
+    max-height: 300px; /* Adjust the maximum height as needed */
+}
+
+audio{
+    margin: 20px auto; 
+    display: block;
+    margin-top: ;
+}
+
+
 
 .QuizButton {
     width: 30%;
@@ -221,6 +235,18 @@ h2 {
     color: #333; /* Dark grey color for headings */
 }
 
+p{
+    width: 30%;
+    margin: 0 auto;
+}
+
+#contact p{
+    margin-bottom: 30px;
+}
+
+#quiz p{
+    width: auto;
+}
 
 
 
