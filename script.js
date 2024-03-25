@@ -18,6 +18,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
+
 document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault();
     document.getElementById('confirmation-message').style.display = 'block';
@@ -60,6 +62,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('quizContainer').style.display = 'none';
+
+    document.querySelectorAll('.QuizButton').forEach(button => {
+        button.addEventListener('click', function() {
+            startSpecificQuiz(this.id);
+            removeQuizButtons();
+        });
+    });
+});
+
 
 
 
@@ -154,26 +168,65 @@ const questions4 = [
 ];
 
 const questions5 = [
-    { text: "Placeholder question for Quiz 5, Question 1", answer: "AI" },
-    // Add more questions as needed
+    { 
+        text: "Listen to the following music piece. Was it created by AI or Human?",
+        audio: "aisong.mp3", 
+        answer: "AI" 
+    },
+    { 
+        text: "Listen to the following music piece. Was it created by AI or Human?",
+        audio: "aisong1.mp3",
+        answer: "AI" 
+    },
+    { 
+        text: "Listen to the following music piece. Was it created by AI or Human?",
+        audio: "aisong3.mp3", 
+        answer: "AI" 
+    },
+    { 
+        text: "Listen to the following music piece. Was it created by AI or Human?",
+        audio: "humansong1.mp3", 
+        answer: "Human" 
+    },
+    { 
+        text: "Listen to the following music piece. Was it created by AI or Human?",
+        audio: "humansong2.mp3", 
+        answer: "Human" 
+    },
+    
 ];
 
 const questions6 = [
-    { text: "Placeholder question for Quiz 6, Question 1", answer: "AI" },
-    // Add more questions as needed
+    { 
+        text: "Watch the following video clip. Was it created by AI or Human?",
+        video: "aivid1.mp4", 
+        answer: "AI" 
+    },
+    { 
+        text: "Watch the following video clip. Was it created by AI or Human?",
+        video: "aivid2.mp4", 
+        answer: "AI" 
+    },
+    { 
+        text: "Watch the following video clip. Was it created by AI or Human?",
+        video: "aivid3.mp4", 
+        answer: "AI" 
+    },
+    { 
+        text: "Watch the following video clip. Was it created by AI or Human?",
+        video: "humanvid.mp4", 
+        answer: "Human" 
+    },
+    { 
+        text: "Watch the following video clip. Was it created by AI or Human?",
+        video: "humanvid1.mp4", 
+        answer: "Human" 
+    },
+    
 ];
 
 
-document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('quizContainer').style.display = 'none';
 
-    document.querySelectorAll('.QuizButton').forEach(button => {
-        button.addEventListener('click', function() {
-            startSpecificQuiz(this.id);
-            removeQuizButtons();
-        });
-    });
-});
 
 function startSpecificQuiz(quizButtonId) {
     currentQuestionIndex = 0;
@@ -230,7 +283,15 @@ function displayQuestion() {
     if (question.img) {
         contentHtml += `<img src="${question.img}" alt="Quiz Image">`;
     }
+
+    if (question.audio) {
+        contentHtml += `<audio controls><source src="${question.audio}" type="audio/mp3">Your browser does not support the audio element.</audio>`;
+    }
     
+    if (question.video) {
+        contentHtml += `<video controls width="250"><source src="${question.video}" type="video/mp4">Your browser does not support the video tag.</video>`;
+    }
+
     contentHtml += `
         <button id="aiButton" onclick="submitAnswer('AI')">AI</button>
         <button id="humanButton" onclick="submitAnswer('Human')">Human</button>
