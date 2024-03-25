@@ -1,0 +1,241 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+#aboutMe{
+    margin-top: 1000px !important;
+}
+
+#aboutMe, #purpose, #faq, #contact{
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 100px;
+    border-top: black 10px solid;
+}
+
+#confirmation-message{
+    display: none;
+    font-size: larger;
+    color: #006400;
+}
+
+body, html {
+    padding-bottom: 60px; /* Adjust based on the height of your footer */
+    
+}
+
+header {
+    background-color: #005A9C;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer {
+    background-color: #003366;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    position: fixed; /* If the footer is fixed */
+    bottom: 0;
+    width: 100%;
+}
+
+.QuizButton {
+    background-color: #007BFF; /* Primary color: Blue */
+    color: white;
+    padding: 10px 20px;
+    margin: 5px;
+    position: relative; /* Change to 'relative' if set to 'absolute' or 'fixed' */
+    margin-top: 10px; /* Adjust top margin to bring buttons closer to content */
+    border: none;
+    border-radius: 5px; /* Slightly rounded corners for a modern look */
+    transition: background-color 0.3s ease;
+}
+
+.QuizButton:hover {
+    background-color: #0056b3; /* Secondary color: Lighter blue */
+}
+
+.QuizButton:hover {
+    background-color: #0056b3; /* Secondary color: Lighter blue */
+}
+
+.QuizButton:hover {
+    background-color: rgb(145, 219, 244);
+}
+
+
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+h1, h2 {
+    font-weight: normal;
+}
+
+p{
+    text-align: center;
+}
+#quizContainer {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 50%; /* Adjust based on the desired width of your container */
+    margin: 0 auto; /* This centers the element horizontally */
+}
+
+#quiz{
+    margin: 0 auto;
+}
+
+button {
+    background-color: #007BFF;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px;
+    transition: background-color 0.3s ease;
+}
+
+section {
+    padding: 20px;
+    margin: 20px 0;
+}
+
+#introduction, #about {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #007BFF;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+img {
+    max-width: 300px;
+    height: 300px;
+    display: block;
+    margin: 0 auto; /* Center the images horizontally */
+    max-height: 300px; /* Adjust the maximum height as needed */
+}
+
+
+.QuizButton {
+    width: 30%;
+    height: 15rem;
+    margin-left: 1.5rem;
+    font-size: 3rem;
+}
+
+.feedback-correct {
+    color: #006400; 
+}
+
+.feedback-incorrect {
+    color: #FF0000; 
+}
+
+/* Hamburger Menu Button */
+.hamburger {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+}
+
+/* Navbar Styles */
+.navbar {
+    height: 100%;
+    width: 0; /* Start off as hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #111; /* Dark background color */
+    overflow-x: hidden; /* Prevents horizontal scroll */
+    transition: 0.5s; /* Smooth transition for opening/closing */
+    padding-top: 60px; /* Space for the hamburger menu */
+    z-index: 10;
+}
+
+
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.navbar ul li a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 22px;
+    color: #ddd;
+    display: block;
+    transition: 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #fff;
+}
+
+
+section {
+    padding: 20px;
+    margin-left: 220px; /* Offset for the navbar, adjust based on its width */
+    margin-top: 20px;
+}
+
+h2 {
+    color: #333; /* Dark grey color for headings */
+}
+
+
+
+
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    header, footer {
+        text-align: center;
+    }
+
+    .QuizButton {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+}
+

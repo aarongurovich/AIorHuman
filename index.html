@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI or Human Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <button class="hamburger">&#9776;</button>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#aboutMe">About Me</a></li>
+                <li><a href="#purpose">Purpose</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <header>
+        <h1>AI or Human: Can You Tell the Difference?</h1>
+    </header>  
+        <section id="quiz">
+            <div id="quizContainer">
+                <p id="question">Click below to start the quiz.</p>
+                <button onclick="startQuiz()">Start Quiz</button>
+            </div>
+        </section>
+    <button class = QuizButton id="poemsQuizButton">POEMS</button>
+    <button class = QuizButton id="imagesQuizButton">IMAGES</button>
+    <button class = QuizButton id="logosQuizButton">LOGOS</button>
+    <button class = QuizButton id="newsQuizButton">NEWS</button>
+    <button class = QuizButton id="songsQuizButton">MUSIC</button>
+    <button class = QuizButton id="videosQuizButton">VIDEOS</button>
+
+    <section id="aboutMe">
+        <h2>About Me</h2>
+        <p>Welcome to AIorHuman.com, a space where technology meets creativity. My name is Aaron Gurovich, a Computer Science student at Texas Tech University with a passion for exploring the intersection of artificial intelligence and human creativity. Born and raised in California, I've always been fascinated by the limitless possibilities technology can offer. My journey at Texas Tech has allowed me to dive deep into the realms of programming, machine learning, and software development.</p>
+    </section>
+    
+    <section id="purpose">
+        <h2>Purpose</h2>
+        <h3>Educational Journey:</h3>
+        <p>Our primary goal is to educate and enlighten. Through a series of carefully crafted quizzes, we invite you to delve into the fascinating world of AI-generated and human-created content. Whether it's poetry that touches the soul, images that captivate the eye, or news that sparks debate, our quizzes are designed to challenge perceptions and encourage critical thinking about the digital content we consume every day.</p>
+        <h3>Bridging Gaps:</h3>
+        <p>We aim to bridge the gap between technological advancement and human creativity. By showcasing the capabilities and limitations of AI in mimicking human creativity, we provide a platform for discussions about the future of creativity, authorship, and the essence of what it means to be human in a digital age.</p>
+        <h3>Continious Learning:</h3>
+        <p>The landscape of AI and creativity is ever-evolving, and so are we. Our quizzes and content will continue to adapt, reflecting the latest developments in AI research and creative expression. We're committed to providing a dynamic platform that grows with its community, fostering an environment of continuous learning and exploration.</p>
+    </section>
+    
+    <section id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <h3>Q: What is AIorHuman.com all about?</h3>
+        <p>A: AIorHuman.com is a fun and educational platform that explores the intersection of artificial intelligence and human creativity through interactive quizzes. We challenge users to distinguish between AI-generated content and human-created masterpieces in various creative domains.</p>
+        <h3>Q: How do the quizzes work?</h3>
+        <p>A: Our quizzes present you with a series of content pieces—such as poems, images, or news articles—and your task is to guess whether each piece was created by AI or by a human. After making your selection, we reveal the true creator and provide insights into the creative process behind each piece.</p>
+        <h3>Q: Who can participate in the quizzes?</h3>
+        <p>A: Anyone with an internet connection and a curious mind can participate! Our quizzes are designed to be enjoyable and accessible to people of all ages and backgrounds, whether you're a seasoned tech enthusiast or just dipping your toes into the world of AI.</p>
+        <h3>Q: I have a question that isn't answered here. How can I get in touch?</h3>
+        <p>A: If you have a question that isn't addressed in our FAQ, we're here to help! Simply head over to the Contact section and send us a message with your inquiry. We'll get back to you as soon as possible with a response.</p>
+    </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+    
+        <p>If you have any questions, feedback, or just want to say hello, feel free to get in touch with us using the form below or through our email address.</p>
+    
+        <form id="contact-form" class="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+    
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+    
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+    
+            <button type="submit">Send Message</button>
+        </form>
+    
+        <p id="confirmation-message">Message Sent!</p>
+    
+        <p>You can also reach us directly via email at <a href="mailto:your@email.com">your@email.com</a>.</p>
+    </section>
+
+    
+    <footer>
+        <p>&copy; 2024 AI Awareness. All rights reserved.</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
