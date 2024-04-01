@@ -1,20 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Kode+Mono:wght@400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Micro+5&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap');
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
 }
 
+*{
+    font-family: Wix Madefor Text;
+}
 
 
 html {
     scroll-behavior: smooth;
 }
 
-#aboutMe{
-    margin-top: 1000px !important;
-}
 
 #aboutMe, #purpose, #faq, #contact{
     text-align: center;
@@ -27,13 +28,46 @@ html {
 #confirmation-message{
     display: none;
     font-size: larger;
-    color: #006400;
 }
 
+
+
 body, html {
-    padding-bottom: 60px; /* Adjust based on the height of your footer */
+    padding-bottom: 60px; 
     
 }
+
+#home {
+    text-align: center;
+    padding: 50px;
+    background-color: #f5f5f5;
+    margin-bottom: 30px;
+    margin: 0 auto;
+}
+
+#home p {
+    color: #666;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.start-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.start-button:hover {
+    background-color: #0056b3;
+}
+
 
 header {
     background-color: #005A9C;
@@ -41,6 +75,7 @@ header {
     text-align: center;
     padding: 20px 0;
 }
+
 
 footer {
     background-color: #003366;
@@ -50,29 +85,25 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    position: fixed; /* If the footer is fixed */
+    position: fixed;
     bottom: 0;
     width: 100%;
 }
 
 .QuizButton {
-    background-color: #007BFF; /* Primary color: Blue */
+    background-color: #007BFF; 
     color: white;
     padding: 10px 20px;
     margin: 5px;
-    position: relative; /* Change to 'relative' if set to 'absolute' or 'fixed' */
-    margin-top: 10px; /* Adjust top margin to bring buttons closer to content */
+    position: relative; 
+    margin-top: 10px; 
     border: none;
-    border-radius: 5px; /* Slightly rounded corners for a modern look */
+    border-radius: 5px; 
     transition: background-color 0.3s ease;
 }
 
-.QuizButton:hover {
-    background-color: #0056b3; /* Secondary color: Lighter blue */
-}
-
-.QuizButton:hover {
-    background-color: #0056b3; /* Secondary color: Lighter blue */
+.QuizButton:active {
+    background-color: #0056b3 !important; 
 }
 
 .QuizButton:hover {
@@ -91,7 +122,9 @@ h1, h2 {
 }
 
 p{
-    text-align: center;
+    line-height: 2 !important;
+    text-indent:1em;  
+    text-align:justify;
 }
 #quizContainer {
     background-color: #ffffff;
@@ -99,12 +132,14 @@ p{
     padding: 20px;
     border-radius: 8px;
     text-align: center;
-    width: 50%; /* Adjust based on the desired width of your container */
-    margin: 0 auto; /* This centers the element horizontally */
+    width: 50%; 
+    margin: 0 auto;
 }
 
 #quiz{
     margin: 0 auto;
+    border-top: solid black 10px;
+    margin-top: 1000px;
 }
 
 button {
@@ -124,6 +159,7 @@ section {
     margin: 20px 0;
 }
 
+
 #introduction, #about {
     background-color: #f8f9fa;
     border-radius: 8px;
@@ -135,6 +171,10 @@ h2 {
     text-align: center;
 }
 
+#quiz h1{
+    text-align: center;
+    font-size: 50px;
+}
 button:hover {
     background-color: #0056b3;
 }
@@ -143,21 +183,20 @@ img {
     max-width: 300px;
     height: 300px;
     display: block;
-    margin: 0 auto; /* Center the images horizontally */
-    max-height: 300px; /* Adjust the maximum height as needed */
+    margin: 20px auto;
+    max-height: 300px; 
 }
 
 video{
     width: 500px;
     display: block;
-    margin: 20px auto; /* Center the images horizontally */
-    max-height: 300px; /* Adjust the maximum height as needed */
+    margin: 20px auto;
+    max-height: 300px;
 }
 
 audio{
     margin: 20px auto; 
     display: block;
-    margin-top: ;
 }
 
 
@@ -177,7 +216,7 @@ audio{
     color: #FF0000; 
 }
 
-/* Hamburger Menu Button */
+
 .hamburger {
     font-size: 24px;
     background: none;
@@ -190,17 +229,17 @@ audio{
     z-index: 2000;
 }
 
-/* Navbar Styles */
+
 .navbar {
     height: 100%;
-    width: 0; /* Start off as hidden */
+    width: 0; 
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #111; /* Dark background color */
-    overflow-x: hidden; /* Prevents horizontal scroll */
-    transition: 0.5s; /* Smooth transition for opening/closing */
-    padding-top: 60px; /* Space for the hamburger menu */
+    background-color: #005A9C; 
+    overflow-x: hidden; 
+    transition: 0.5s; 
+    padding-top: 60px;
     z-index: 10;
 }
 
@@ -227,26 +266,71 @@ audio{
 
 section {
     padding: 20px;
-    margin-left: 220px; /* Offset for the navbar, adjust based on its width */
+    margin-left: 220px; 
     margin-top: 20px;
 }
 
 h2 {
-    color: #333; /* Dark grey color for headings */
+    color: #333; 
 }
 
 p{
-    width: 30%;
+    width: 30rem;
     margin: 0 auto;
 }
 
 #contact p{
     margin-bottom: 30px;
+    width: 100%;
+    text-align: center;
 }
 
 #quiz p{
     width: auto;
+    text-align: center;
 }
+
+
+#interactiveStory {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 20px auto;
+}
+
+#storyContainer {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#storyText {
+    font-size: 18px;
+    margin-bottom: 20px;
+    
+}
+
+#storyOptions {
+    display: flex;
+    flex-direction: column;
+}
+
+#storyOptions button {
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#storyOptions button:hover {
+    background-color: #0056b3;
+}
+
 
 
 

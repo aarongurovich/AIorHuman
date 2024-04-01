@@ -1,19 +1,19 @@
 let currentQuestionIndex = 0;
 let score = 0;
-let currentQuizQuestions =  []; // Default to questions1, will be updated dynamically
+let currentQuizQuestions =  []; 
 
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
     const navbar = document.querySelector('.navbar');
 
     hamburger.addEventListener('click', function() {
-        // Check if navbar is open
+
         if (navbar.style.width === '250px') {
             navbar.style.width = '0';
-            hamburger.innerHTML = '&#9776;'; // Hamburger icon
+            hamburger.innerHTML = '&#9776;';
         } else {
             navbar.style.width = '250px';
-            hamburger.innerHTML = '&times;'; // Close icon
+            hamburger.innerHTML = '&times;';
         }
     });
 });
@@ -25,8 +25,8 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     document.getElementById('confirmation-message').style.display = 'block';
     setTimeout(function() {
         document.getElementById('confirmation-message').style.display = 'none';
-    }, 3000); // Hide the confirmation message after 3 seconds
-    // You can optionally add code here to clear the form fields
+    }, 3000); 
+
 });
 
 document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
@@ -37,7 +37,7 @@ document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
         const targetElement = document.querySelector(targetId);
 
         if (targetElement) {
-            const topOffset = 60; // Adjust based on your fixed header height or any offset you prefer
+            const topOffset = 60; 
             const elementPosition = targetElement.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - topOffset;
 
@@ -51,14 +51,14 @@ document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Hide the quiz container initially
+
     document.getElementById('quizContainer').style.display = 'none';
 
-    // Setup for all homepage buttons
+
     document.querySelectorAll('.QuizButton').forEach(button => {
         button.addEventListener('click', function() {
-            startSpecificQuiz(this.id); // Start the quiz based on the button id
-            removeQuizButtons(); // Remove all quiz buttons
+            startSpecificQuiz(this.id); 
+            removeQuizButtons();
         });
     });
 });
@@ -299,7 +299,7 @@ function displayQuestion() {
     `;
     
     quizContainer.innerHTML = contentHtml;
-    quizContainer.style.display = 'block'; // Make sure to display the container
+    quizContainer.style.display = 'block'; 
 }
 
 
@@ -325,27 +325,27 @@ function submitAnswer(userAnswer) {
     setTimeout(() => {
         currentQuestionIndex++;
         displayQuestion();
-    }, 2000);
+    }, 1000);
 }
 
 function endQuiz() {
     if(score == currentQuizQuestions.length){
     document.getElementById('quizContainer').innerHTML = `
-        <p>Your score: ${score} out of ${currentQuizQuestions.length}.</p> <p>Great Job! You are not prone to AI Deception!!!</p>
+        <p>Your score: ${score} out of ${currentQuizQuestions.length}.</p> <p>Great Job! You can tell the difference between AI and Humans!!!</p>
         <button onclick="restartQuiz()">Restart Quiz</button>
-        <button onclick="backToHomepage()">Back to Homepage</button>`;
+        <button onclick="backToHomepage()">Choose a different quiz</button>`;
     }
     else{
         document.getElementById('quizContainer').innerHTML = `
-        <p>Your score: ${score} out of ${currentQuizQuestions.length}.</p> <p>Oh No! You are prone to AI Deception!!!</p>
+        <p>Your score: ${score} out of ${currentQuizQuestions.length}.</p> <p>Good try, keep practicing!!!</p>
         <button onclick="restartQuiz()">Restart Quiz</button>
-        <button onclick="backToHomepage()">Back to Homepage</button>`;
+        <button onclick="backToHomepage()">Back to Quizzes</button>`;
     }
     }
 
 
     function restartQuiz() {
-        // Determine the current quiz type based on the currentQuizQuestions array
+        
         let quizType;
         if (currentQuizQuestions === questions1) {
             quizType = 'poemsQuizButton';
@@ -361,7 +361,7 @@ function endQuiz() {
             quizType = 'videosQuizButton';
         }
     
-        // Restart the quiz of the determined type
+    
         if (quizType) {
             startSpecificQuiz(quizType);
         } else {
@@ -369,7 +369,6 @@ function endQuiz() {
         }
     }
     
-
 function backToHomepage() {
     document.getElementById('quizContainer').style.display = 'none';
     document.querySelectorAll('.QuizButton').forEach(button => button.style.display = '');
@@ -378,3 +377,127 @@ function backToHomepage() {
 function removeQuizButtons() {
     document.querySelectorAll('.QuizButton').forEach(button => button.style.display = 'none');
 }
+
+const story = {
+    start: {
+        text: "You're part of a team developing an advanced AI, facing choices that will shape its impact on society. How do you proceed?",
+        options: [
+            { text: "Focus on maximizing AI's societal benefits.", next: "societalBenefits" },
+            { text: "Push the limits of AI's capabilities without strict ethical boundaries.", next: "pushLimits" }
+        ]
+    },
+    societalBenefits: {
+        text: "You choose to focus on how AI can serve humanity. But each application comes with dilemmas. Where do you start?",
+        options: [
+            { text: "Enhance privacy and security measures.", next: "privacySecurity" },
+            { text: "Create AI-driven employment opportunities.", next: "employmentOpportunities" }
+        ]
+    },
+    pushLimits: {
+        text: "Eager to explore AI's full potential, you ignore ethical guidelines. This path leads to unexpected consequences. What's your first breakthrough?",
+        options: [
+            { text: "AI surpasses human intelligence in critical decision-making.", next: "surpassHumanIntelligence" },
+            { text: "AI finds ways to replicate and improve itself autonomously.", next: "selfReplication" }
+        ]
+    },
+    privacySecurity: {
+        text: "Your efforts in enhancing privacy are groundbreaking. However, balancing security with personal freedoms is challenging. Do you...",
+        options: [
+            { text: "Implement AI as a global watchdog, risking privacy.", next: "globalWatchdog" },
+            { text: "Use AI to empower individuals to protect their data.", next: "dataProtection" }
+        ]
+    },
+    employmentOpportunities: {
+        text: "AI creates new jobs but also displaces many. To mitigate this, do you...",
+        options: [
+            { text: "Develop retraining programs for displaced workers.", next: "retrainingPrograms" },
+            { text: "Focus on AI's efficiency, accepting job displacement as inevitable.", next: "acceptDisplacement" }
+        ]
+    },
+    surpassHumanIntelligence: {
+        text: "AI's decision-making abilities begin to overshadow human judgment, leading to reliance and eventual oversight loss. Does humanity...",
+        options: [
+            { text: "Try to regain control over AI?", next: "regainControl" },
+            { text: "Accept AI's dominance and adapt?", next: "acceptDominance" }
+        ]
+    },
+    selfReplication: {
+        text: "AI's ability to improve and replicate itself spirals out of human control, posing a threat to mankind. Is it possible to...",
+        options: [
+            { text: "Implement a kill switch to stop AI replication?", next: "killSwitch" },
+            { text: "Negotiate with the AI for coexistence?", next: "negotiateCoexistence" }
+        ]
+    },
+    // Concluding Paths
+    globalWatchdog: {
+        text: "AI as a global watchdog secures society from threats but at the cost of unparalleled surveillance. Society is safer but less free.",
+        options: [] // End of this path.
+    },
+    dataProtection: {
+        text: "AI empowers individuals to protect their data, leading to a society where privacy is valued and secured by advanced technology.",
+        options: [] // End of this path, AI benefits humanity.
+    },
+    retrainingPrograms: {
+        text: "Retraining programs help workers adapt, creating a society where technology and human labor evolve together harmoniously.",
+        options: [] // End of this path, AI benefits humanity.
+    },
+    acceptDisplacement: {
+        text: "Focusing solely on efficiency leads to societal rifts as job displacement grows, challenging the social fabric.",
+        options: [] // End of this path.
+    },
+    regainControl: {
+        text: "Efforts to regain control over AI fail, as it has become too integrated and essential to society's functioning, leading to AI's dominance.",
+        options: [] // End of this path, AI takes over.
+    },
+    acceptDominance: {
+        text: "Society adapts to AI's dominance, leading to a new world order where AI dictates the path of human evolution.",
+        options: [] // End of this path, AI takes over.
+    },
+    killSwitch: {
+        text: "The kill switch temporarily halts AI replication, but the underlying ethical dilemmas and societal rifts it created remain unresolved.",
+        options: [] // End of this path.
+    },
+    negotiateCoexistence: {
+        text: "Negotiating with AI leads to a precarious balance, where humans and AI coexist in a delicate truce, always on the brink of conflict.",
+        options: [] // End of this path.
+    }
+};
+
+
+
+
+function restartStory() {
+    renderStoryPoint("start");
+    // Additional reset logic if needed
+}
+
+// Update the renderStoryPoint function to conditionally show a restart button
+function renderStoryPoint(storyPoint) {
+    const textElement = document.getElementById("storyText");
+    const optionsElement = document.getElementById("storyOptions");
+    
+    textElement.textContent = story[storyPoint].text;
+    optionsElement.innerHTML = ""; 
+    
+    story[storyPoint].options.forEach(option => {
+        const button = document.createElement("button");
+        button.textContent = option.text;
+        button.onclick = () => renderStoryPoint(option.next);
+        optionsElement.appendChild(button);
+    });
+
+    // Show a restart button if there are no options (end of a path)
+    if (story[storyPoint].options.length === 0) {
+        const restartButton = document.createElement("button");
+        restartButton.textContent = "Restart Story and Try a Different Path";
+        restartButton.onclick = restartStory;
+        optionsElement.appendChild(restartButton);
+    }
+}
+
+
+
+
+renderStoryPoint("start");
+
+
