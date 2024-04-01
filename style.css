@@ -16,6 +16,19 @@ html {
     scroll-behavior: smooth;
 }
 
+#dataSection {
+    width: 600px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  #aiImpactChart {
+    width: 600px;
+    margin: auto;
+  }
+
+  
 
 #aboutMe, #purpose, #faq, #contact{
     text-align: center;
