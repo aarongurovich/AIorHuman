@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dangers of AI</title>
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
     <header>
@@ -38,7 +39,9 @@
                     </div>
                 </div>
             </section>
+
             <img src="arrow.png">
+
             <h1>AI or Human: Can You Tell the Difference?</h1>
             <div id="quizContainer">
                 <p id="question">Click below to start the quiz.</p>
@@ -50,8 +53,16 @@
             <button class = QuizButton id="newsQuizButton">NEWS</button>
             <button class = QuizButton id="songsQuizButton">MUSIC</button>
             <button class = QuizButton id="videosQuizButton">VIDEOS</button>
+
             <img src="arrow.png">
-           
+
+            <section id="dataSection">
+                <h2>AI Investments Over the Years</h2>
+                <canvas id="aiInvestmentsChart"></canvas>
+                <h2>AI's Impact on Employment</h2>
+                <canvas id="aiEmploymentChart"></canvas>
+              </section>
+              
             
         </section>
    
@@ -104,5 +115,6 @@
     </footer>
     
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>
