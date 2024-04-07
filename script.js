@@ -50,18 +50,10 @@ document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
 });
 
 
-document.addEventListener('DOMContentLoaded', () => {
+  
+    
 
-    document.getElementById('quizContainer').style.display = 'none';
 
-
-    document.querySelectorAll('.QuizButton').forEach(button => {
-        button.addEventListener('click', function() {
-            startSpecificQuiz(this.id); 
-            removeQuizButtons();
-        });
-    });
-});
 
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('quizContainer').style.display = 'none';
@@ -503,84 +495,12 @@ function renderStoryPoint(storyPoint) {
 
 renderStoryPoint("start");
 
-function createCriticalAICharts() {
-    // AI Investments Over the Years vs. Public Concern and Incidents
-    const ctxInvestmentsVsConcern = document.getElementById('aiInvestmentsChart').getContext('2d');
-    new Chart(ctxInvestmentsVsConcern, {
-        type: 'line',
-        data: {
-            labels: ['2015', '2016', '2017', '2018', '2019', '2020'],
-            datasets: [{
-                label: 'AI Investments ($ Billion)',
-                data: [5, 7, 12, 17, 25, 40],
-                borderColor: 'rgba(54, 162, 235, 1)',
-                fill: false,
-                yAxisID: 'y',
-            }, {
-                label: 'Public Concern (Scale 0-100)',
-                data: [20, 30, 45, 60, 75, 85],
-                borderColor: 'rgba(255, 99, 132, 1)',
-                fill: false,
-                yAxisID: 'y1',
-            }, {
-                label: 'Reported AI Incidents',
-                data: [2, 3, 5, 7, 12, 15],
-                borderColor: 'rgba(255, 206, 86, 1)',
-                fill: false,
-                yAxisID: 'y1',
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    type: 'linear',
-                    position: 'left',
-                },
-                y1: {
-                    type: 'linear',
-                    position: 'right',
-                    grid: {
-                        drawOnChartArea: false,
-                    },
-                },
-            }
-        }
-    });
-
-    // AI's Impact on Employment with a Net Jobs Lost Dataset
-    const ctxEmployment = document.getElementById('aiEmploymentChart').getContext('2d');
-    new Chart(ctxEmployment, {
-        type: 'bar',
-        data: {
-            labels: ['2015', '2016', '2017', '2018', '2019', '2020'],
-            datasets: [{
-                label: 'Jobs Created by AI',
-                data: [200, 250, 300, 500, 700, 900],
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                borderColor: 'rgba(75, 192, 192, 1)',
-            }, {
-                label: 'Jobs Displaced by AI',
-                data: [250, 300, 450, 700, 950, 1200],
-                backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                borderColor: 'rgba(255, 99, 132, 1)',
-            }, {
-                label: 'Net Jobs Lost to AI',
-                data: [50, 50, 150, 200, 250, 300],
-                backgroundColor: 'rgba(255, 159, 64, 0.2)',
-                borderColor: 'rgba(255, 159, 64, 1)',
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    stacked: true,
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-    createCriticalAICharts();
+document.querySelector('.start-button').addEventListener('click', function() {
+    this.classList.add('clicked'); // Add a class to signify the button has been clicked
+    setTimeout(() => {
+        this.classList.remove('clicked'); // Remove the class after 150 milliseconds
+    }, 150);
 });
+
+
+

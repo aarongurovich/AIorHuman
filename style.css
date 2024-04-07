@@ -16,27 +16,42 @@ html {
     scroll-behavior: smooth;
 }
 
-#dataSection {
-    width: 600px;
-    margin: auto;
-    padding: 20px;
-    text-align: center;
+
+  #about-me .profile-pic {
+    width: auto;
+    height: auto; 
+    border-radius: 50%; 
+    margin: 0px 100px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    position: absolute;
   }
   
-  #aiImpactChart {
-    width: 600px;
-    margin: auto;
-  }
-
+  
+  
   
 
-#aboutMe, #purpose, #faq, #contact{
+#about-me, #purpose, #faq, #contact{
     text-align: center;
     margin-right: auto;
     margin-left: auto;
     margin-top: 100px;
     border-top: black 10px solid;
 }
+
+#faq h1{
+    text-align: center;
+    font-size: 50px;
+}
+
+#about-me h1{
+    text-align: center;
+    font-size: 50px;
+}
+
+#about-me p{
+    margin-bottom: 50px;
+}
+
 
 #confirmation-message{
     display: none;
@@ -67,20 +82,26 @@ body, html {
 }
 
 .start-button {
-    display: inline-block;
-    background-color: #007bff;
-    color: #ffffff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
+    font-size: 24px; /* Increased font size */
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    color: #ffffff; /* White text */
+    background-color: #007BFF; /* Blue background */
+    padding: 20px 40px; /* Increased padding */
+    border-radius: 8px;
+    text-decoration: none; /* Remove underline from link */
+    transition: transform 0.1s ease; /* Adjusted for transform */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Added shadow for depth */
+    display: inline-block; /* Ensure transformations work */
 }
 
-.start-button:hover {
-    background-color: #0056b3;
+.start-button:active {
+    transform: scale(0.95); /* Scale down when clicked */
 }
 
+.start-button.clicked {
+    box-shadow: 0 0 12px rgba(0, 123, 255, 0.5); /* Flashing shadow effect */
+    transition: box-shadow 0.15s ease-out;
+}
 
 header {
     background-color: #005A9C;
