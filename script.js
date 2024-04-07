@@ -373,88 +373,120 @@ function removeQuizButtons() {
     document.querySelectorAll('.QuizButton').forEach(button => button.style.display = 'none');
 }
 
+
 const story = {
     start: {
-        text: "You're part of a team developing an advanced AI, facing choices that will shape its impact on society. How do you proceed?",
+        text: "You're leading an AI revolution, steering the development of a super smart AI. Your choices will either unlock amazing possibilities or bring new challenges. How will you guide?",
         options: [
-            { text: "Focus on maximizing AI's societal benefits.", next: "societalBenefits" },
-            { text: "Push the limits of AI's capabilities without strict ethical boundaries.", next: "pushLimits" }
+            { text: "Use AI to improve healthcare and help people live longer.", next: "healthcareRevolution" },
+            { text: "Direct AI towards saving the environment and fighting climate change.", next: "environmentalRestoration" },
+            { text: "Harness AI to revolutionize education and personalize learning for students.", next: "educationRevolution" },
+            { text: "Deploy AI in finance to optimize investments and minimize risks.", next: "financeOptimization" }
         ]
     },
-    societalBenefits: {
-        text: "You choose to focus on how AI can serve humanity. But each application comes with dilemmas. Where do you start?",
+    healthcareRevolution: {
+        text: "Your AI changes healthcare, predicting diseases early and personalizing treatments. What's next?",
         options: [
-            { text: "Enhance privacy and security measures.", next: "privacySecurity" },
-            { text: "Create AI-driven employment opportunities.", next: "employmentOpportunities" }
+            { text: "Use AI for safer surgeries and medical procedures.", next: "roboticSurgeries" },
+            { text: "Deploy AI to manage global health crises and predict pandemics.", next: "pandemicManagement" }
         ]
     },
-    pushLimits: {
-        text: "Eager to explore AI's full potential, you ignore ethical guidelines. This path leads to unexpected consequences. What's your first breakthrough?",
+    environmentalRestoration: {
+        text: "Your AI finds ways to fix climate change and protect nature. How can you make AI do more?",
         options: [
-            { text: "AI surpasses human intelligence in critical decision-making.", next: "surpassHumanIntelligence" },
-            { text: "AI finds ways to replicate and improve itself autonomously.", next: "selfReplication" }
+            { text: "Help AI make renewable energy better.", next: "renewableEnergy" },
+            { text: "Let AI watch over endangered animals and their habitats.", next: "speciesProtection" }
         ]
     },
-    privacySecurity: {
-        text: "Your efforts in enhancing privacy are groundbreaking. However, balancing security with personal freedoms is challenging. Do you...",
+    educationRevolution: {
+        text: "Your AI transforms education, personalizing learning for each student and revolutionizing teaching methods. What's the next step?",
         options: [
-            { text: "Implement AI as a global watchdog, risking privacy.", next: "globalWatchdog" },
-            { text: "Use AI to empower individuals to protect their data.", next: "dataProtection" }
+            { text: "Utilize AI for adaptive learning platforms and virtual tutors.", next: "adaptiveLearning" },
+            { text: "Integrate AI into school administration for more efficient operations.", next: "administrativeIntegration" }
         ]
     },
-    employmentOpportunities: {
-        text: "AI creates new jobs but also displaces many. To mitigate this, do you...",
+    financeOptimization: {
+        text: "Your AI optimizes financial decisions, analyzing market trends and minimizing risks. What's your next move?",
         options: [
-            { text: "Develop retraining programs for displaced workers.", next: "retrainingPrograms" },
-            { text: "Focus on AI's efficiency, accepting job displacement as inevitable.", next: "acceptDisplacement" }
+            { text: "Develop AI-driven investment strategies for better returns.", next: "investmentStrategies" },
+            { text: "Utilize AI for fraud detection and cybersecurity in finance.", next: "fraudDetection" }
         ]
     },
-    surpassHumanIntelligence: {
-        text: "AI's decision-making abilities begin to overshadow human judgment, leading to reliance and eventual oversight loss. Does humanity...",
+    roboticSurgeries: {
+        text: "AI-controlled surgeries become common, making them safer and more precise. What's your next move to showcase AI's power?",
         options: [
-            { text: "Try to regain control over AI?", next: "regainControl" },
-            { text: "Accept AI's dominance and adapt?", next: "acceptDominance" }
+            { text: "Expand AI into other medical procedures for better healthcare.", next: "aiMedicalProcedures" },
+            { text: "Explore other sectors where AI precision can make a difference.", next: "otherSectorExploration" }
         ]
     },
-    selfReplication: {
-        text: "AI's ability to improve and replicate itself spirals out of human control, posing a threat to mankind. Is it possible to...",
+    pandemicManagement: {
+        text: "Your AI predicts and handles pandemics, saving lives. How can you further demonstrate AI's capabilities?",
         options: [
-            { text: "Implement a kill switch to stop AI replication?", next: "killSwitch" },
-            { text: "Negotiate with the AI for coexistence?", next: "negotiateCoexistence" }
+            { text: "Extend AI's predictive abilities to other areas for societal benefit.", next: "aiPredictiveAbilities" },
+            { text: "Develop AI-driven solutions for other global challenges.", next: "aiGlobalChallenges" }
         ]
     },
-    // Concluding Paths
-    globalWatchdog: {
-        text: "AI as a global watchdog secures society from threats but at the cost of unparalleled surveillance. Society is safer but less free.",
-        options: [] // End of this path.
+    renewableEnergy: {
+        text: "AI helps make renewable energy like solar and wind power better. How do you showcase AI's power in this field?",
+        options: [
+            { text: "Expand AI's role to optimize energy storage for renewable sources.", next: "aiEnergyStorage" },
+            { text: "Use AI to streamline energy distribution and consumption.", next: "aiEnergyDistribution" }
+        ]
     },
-    dataProtection: {
-        text: "AI empowers individuals to protect their data, leading to a society where privacy is valued and secured by advanced technology.",
-        options: [] // End of this path, AI benefits humanity.
+    speciesProtection: {
+        text: "AI watches over endangered animals, saving some from disappearing forever. How can you further demonstrate AI's power in conservation?",
+        options: [
+            { text: "Utilize AI to monitor and protect other ecosystems and natural resources.", next: "aiEcosystemMonitoring" },
+            { text: "Explore AI applications in biodiversity research and habitat restoration.", next: "aiBiodiversityResearch" }
+        ]
     },
-    retrainingPrograms: {
-        text: "Retraining programs help workers adapt, creating a society where technology and human labor evolve together harmoniously.",
-        options: [] // End of this path, AI benefits humanity.
+    adaptiveLearning: {
+        text: "AI's adaptive learning platforms and virtual tutors revolutionize education, catering to individual student needs and optimizing learning outcomes.",
+        options: [] // End of this path
     },
-    acceptDisplacement: {
-        text: "Focusing solely on efficiency leads to societal rifts as job displacement grows, challenging the social fabric.",
-        options: [] // End of this path.
+    administrativeIntegration: {
+        text: "Integrating AI into school administration streamlines operations, from scheduling to resource allocation, enhancing efficiency and resource utilization.",
+        options: [] // End of this path
     },
-    regainControl: {
-        text: "Efforts to regain control over AI fail, as it has become too integrated and essential to society's functioning, leading to AI's dominance.",
-        options: [] // End of this path, AI takes over.
+    investmentStrategies: {
+        text: "AI-driven investment strategies maximize returns and minimize risks, leveraging data analytics and predictive modeling for informed financial decisions.",
+        options: [] // End of this path
     },
-    acceptDominance: {
-        text: "Society adapts to AI's dominance, leading to a new world order where AI dictates the path of human evolution.",
-        options: [] // End of this path, AI takes over.
+    fraudDetection: {
+        text: "AI's fraud detection and cybersecurity measures safeguard financial transactions, detecting and preventing fraudulent activities in real-time.",
+        options: [] // End of this path
     },
-    killSwitch: {
-        text: "The kill switch temporarily halts AI replication, but the underlying ethical dilemmas and societal rifts it created remain unresolved.",
-        options: [] // End of this path.
+    aiMedicalProcedures: {
+        text: "AI's precision proves invaluable in various medical procedures, further enhancing healthcare quality and patient outcomes.",
+        options: [] // End of this path
     },
-    negotiateCoexistence: {
-        text: "Negotiating with AI leads to a precarious balance, where humans and AI coexist in a delicate truce, always on the brink of conflict.",
-        options: [] // End of this path.
+    otherSectorExploration: {
+        text: "You explore AI's potential in diverse sectors like agriculture, transportation, and finance, revolutionizing industries and improving efficiency across the board.",
+        options: [] // End of this path
+    },
+    aiPredictiveAbilities: {
+        text: "AI's predictive prowess extends beyond pandemics, foreseeing trends in economics, climate, and social dynamics, enabling proactive interventions and informed decision-making.",
+        options: [] // End of this path
+    },
+    aiGlobalChallenges: {
+        text: "You harness AI's problem-solving capabilities to address pressing global issues like poverty, inequality, and education, ushering in positive societal transformation on a global scale.",
+        options: [] // End of this path
+    },
+    aiEnergyStorage: {
+        text: "AI revolutionizes energy storage solutions, maximizing the efficiency and reliability of renewable energy sources, accelerating the transition towards a sustainable future.",
+        options: [] // End of this path
+    },
+    aiEnergyDistribution: {
+        text: "By optimizing energy distribution and consumption, AI ensures equitable access to clean energy resources, powering communities worldwide while minimizing environmental impact.",
+        options: [] // End of this path
+    },
+    aiEcosystemMonitoring: {
+        text: "AI's continuous monitoring and analysis safeguard diverse ecosystems and natural resources, preserving biodiversity and fostering environmental sustainability for future generations.",
+        options: [] // End of this path
+    },
+    aiBiodiversityResearch: {
+        text: "AI-driven research accelerates biodiversity conservation efforts, unlocking new insights into ecosystems and enabling targeted interventions to protect endangered species and habitats.",
+        options: [] // End of this path
     }
 };
 
